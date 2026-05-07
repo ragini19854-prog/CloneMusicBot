@@ -8,8 +8,8 @@ load_dotenv()
 API_ID = int(getenv("API_ID", "0"))
 API_HASH = getenv("API_HASH")
 
-BOT_TOKEN = getenv("BOT_TOKEN")
-BOT_ID = getenv("BOT_ID")
+BOT_TOKEN = getenv("8693231254:AAFmLowrMpefZiS9XT8vfG3vUVPvuRu8E-E")
+BOT_ID = getenv("8693231254)
 
 OWNER_USERNAME = getenv("OWNER_USERNAME", "")
 BOT_USERNAME = getenv("BOT_USERNAME", "")
@@ -17,7 +17,7 @@ BOT_NAME = getenv("BOT_NAME", "")
 ASSUSERNAME = getenv("ASSUSERNAME", "")
 BOT_LINK = getenv("BOT_LINK", "https://t.me/CLONNE_MUSIC_BOT?start=_tgr_QHn2CMQ5Njc1")
 
-MONGO_DB_URI = getenv("MONGO_DB_URI")
+MONGO_DB_URI = getenv("mongodb+srv://bsdk:betichod@cluster0.fgj1r9z.mongodb.net/?retryWrites=true&w=majority")
 
 YTPROXY_URL = getenv("YTPROXY_URL", 'https://tgapi.xbitcode.com')
 YT_API_KEY = getenv("YT_API_KEY" , 'xbit_B4TNnBAoe6uoSM7NLFz-dk6X7GibJ6Bh')
