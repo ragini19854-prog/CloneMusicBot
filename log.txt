@@ -1,0 +1,281 @@
+[29-Mar-26 12:45:12 - INFO] - PritiMusic.core.dir - Directories Updated.
+[29-Mar-26 12:45:14 - INFO] - PritiMusic.core.dir - Directories Updated.
+[29-Mar-26 12:45:14 - INFO] - PritiMusic.core.git - Git Client Found [VPS DEPLOYER]
+[29-Mar-26 12:45:14 - INFO] - PritiMusic.misc - 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 𝗟𝗢𝗔𝗗 𝗕𝗔𝗕𝗬🍫........
+[29-Mar-26 12:45:14 - INFO] - PritiMusic.core.bot - Starting Bot...
+[29-Mar-26 12:45:16 - INFO] - PritiMusic.misc - 𝗦𝗨𝗗𝗢 𝗨𝗦𝗘𝗥 𝗗𝗢𝗡𝗘✨🎋.
+[29-Mar-26 12:45:21 - INFO] - PritiMusic.core.bot - Music Bot Started as ˹𝐂𝐋𝐎𝐍𝐘 ✘ 𝐌ᴜsɪ𝐜˼♪ 
+[29-Mar-26 12:45:21 - INFO] - PritiMusic.plugins - 𝐀𝐥𝐥 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐋𝐨𝐚𝐝𝐞𝐝 𝐁𝐚𝐛𝐲🥳...
+[29-Mar-26 12:45:21 - INFO] - PritiMusic.core.userbot - Starting Assistants...
+[29-Mar-26 12:45:21 - INFO] - PritiMusic.core.userbot - Assistant Started as <a href=tg://user?id=7237930808>˹𝐂𝐋𝐎𝐍𝐘 ✘ 𝐌ᴜsɪ𝐜˼♪ 𝐀ꜱɪᴀɴᴛᴀɴᴛ</a>
+[29-Mar-26 12:45:21 - INFO] - PritiMusic.core.call - Starting PyTgCalls Client...
+
+[29-Mar-26 12:45:23 - INFO] - root - Restarting all cloned bots........
+[29-Mar-26 12:45:28 - INFO] - PritiMusic - ╔═════ஜ۩۞۩ஜ════╗
+  ☠︎︎𝗠𝗔𝗗𝗘 𝗕𝗬 𝗣𝗿𝗼𝗕𝗼t𝘀☠︎︎
+╚═════ஜ۩۞۩ஜ════╝
+[29-Mar-26 18:04:58 - ERROR] - pyrogram.dispatcher - Unhandled exception: Invalid file. Expected a file path as string or a binary (not text) file pointer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 383, in _dispatch_to_handlers
+    await self._execute_handler(handler, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 410, in _execute_handler
+    await handler.callback(self.client, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/handlers/message_handler.py", line 154, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "/app/PritiMusic/utils/decorators/language.py", line 26, in wrapper
+    return await mystic(_, message, language)
+  File "/app/PritiMusic/plugins/tools/ping.py", line 19, in ping_com
+    response = await message.reply_photo(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/types/messages_and_media/message.py", line 3157, in reply_photo
+    return await self._client.send_photo(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/messages/send_photo.py", line 237, in send_photo
+    file = await self.save_file(photo, progress=progress, progress_args=progress_args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/advanced/save_file.py", line 120, in save_file
+    raise ValueError("Invalid file. Expected a file path as string or a binary (not text) file pointer")
+ValueError: Invalid file. Expected a file path as string or a binary (not text) file pointer
+[29-Mar-26 18:05:42 - ERROR] - pyrogram.dispatcher - Unhandled exception: Invalid file. Expected a file path as string or a binary (not text) file pointer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 383, in _dispatch_to_handlers
+    await self._execute_handler(handler, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 410, in _execute_handler
+    await handler.callback(self.client, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/handlers/message_handler.py", line 154, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "/app/PritiMusic/utils/decorators/play.py", line 77, in wrapper
+    return await message.reply_photo(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/types/messages_and_media/message.py", line 3157, in reply_photo
+    return await self._client.send_photo(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/messages/send_photo.py", line 237, in send_photo
+    file = await self.save_file(photo, progress=progress, progress_args=progress_args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/advanced/save_file.py", line 120, in save_file
+    raise ValueError("Invalid file. Expected a file path as string or a binary (not text) file pointer")
+ValueError: Invalid file. Expected a file path as string or a binary (not text) file pointer
+[30-Mar-26 07:21:57 - ERROR] - pyrogram.dispatcher - Unhandled exception: list index out of range
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 383, in _dispatch_to_handlers
+    await self._execute_handler(handler, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 410, in _execute_handler
+    await handler.callback(self.client, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/handlers/message_handler.py", line 154, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "/app/PritiMusic/utils/decorators/admins.py", line 114, in wrapper
+    return await mystic(client, message, _, chat_id)
+  File "/app/PritiMusic/plugins/admins/skip.py", line 263, in skip
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+[30-Mar-26 07:21:59 - ERROR] - PritiMusic.plugins.play.play - IndexError
+Traceback (most recent call last):
+  File "/app/PritiMusic/plugins/play/play.py", line 412, in play_commnd
+    await stream(
+  File "/app/PritiMusic/utils/stream/stream.py", line 217, in stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+[30-Mar-26 07:21:59 - ERROR] - PritiMusic.plugins.play.play - IndexError
+Traceback (most recent call last):
+  File "/app/PritiMusic/plugins/play/play.py", line 412, in play_commnd
+    await stream(
+  File "/app/PritiMusic/utils/stream/stream.py", line 217, in stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+[30-Mar-26 07:22:02 - ERROR] - pyrogram.dispatcher - Unhandled exception: Telegram says: [400 MESSAGE_ID_INVALID] (caused by "messages.EditMessage") Pyrogram 2.3.69 thinks: The message id is invalid
+Traceback (most recent call last):
+  File "/app/PritiMusic/plugins/play/play.py", line 412, in play_commnd
+    await stream(
+  File "/app/PritiMusic/utils/stream/stream.py", line 217, in stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 383, in _dispatch_to_handlers
+    await self._execute_handler(handler, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 410, in _execute_handler
+    await handler.callback(self.client, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/handlers/message_handler.py", line 154, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "/app/PritiMusic/utils/decorators/play.py", line 185, in wrapper
+    return await command(
+  File "/app/PritiMusic/plugins/play/play.py", line 432, in play_commnd
+    return await mystic.edit_text(err)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/types/messages_and_media/message.py", line 4504, in edit_text
+    return await self._client.edit_message_text(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/messages/edit_message_text.py", line 109, in edit_message_text
+    r = await self.invoke(rpc)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/advanced/invoke.py", line 80, in invoke
+    r = await self.session.invoke(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/session/session.py", line 420, in invoke
+    return await self.send(query, timeout=timeout)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/session/session.py", line 377, in send
+    RPCError.raise_it(result, type(data))
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/errors/rpc_error.py", line 93, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.bad_request_400.MessageIdInvalid: Telegram says: [400 MESSAGE_ID_INVALID] (caused by "messages.EditMessage") Pyrogram 2.3.69 thinks: The message id is invalid
+[30-Mar-26 07:22:17 - ERROR] - asyncio - Task exception was never retrieved
+future: <Task finished name='Task-448687' coro=<Call.decorators.<locals>.stream_end_handler1() done, defined at /app/PritiMusic/core/call.py:640> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "/app/PritiMusic/core/call.py", line 644, in stream_end_handler1
+    await self.change_stream(client, update.chat_id)
+  File "/app/PritiMusic/core/call.py", line 619, in change_stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+[30-Mar-26 07:22:17 - ERROR] - asyncio - Task exception was never retrieved
+future: <Task finished name='Task-376045' coro=<Call.decorators.<locals>.stream_end_handler1() done, defined at /app/PritiMusic/core/call.py:640> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "/app/PritiMusic/core/call.py", line 644, in stream_end_handler1
+    await self.change_stream(client, update.chat_id)
+  File "/app/PritiMusic/core/call.py", line 619, in change_stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+[30-Mar-26 07:22:17 - ERROR] - asyncio - Task exception was never retrieved
+future: <Task finished name='Task-387692' coro=<Call.decorators.<locals>.stream_end_handler1() done, defined at /app/PritiMusic/core/call.py:640> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "/app/PritiMusic/core/call.py", line 644, in stream_end_handler1
+    await self.change_stream(client, update.chat_id)
+  File "/app/PritiMusic/core/call.py", line 619, in change_stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+[30-Mar-26 07:22:17 - ERROR] - PritiMusic.plugins.play.play - IndexError
+Traceback (most recent call last):
+  File "/app/PritiMusic/plugins/play/play.py", line 412, in play_commnd
+    await stream(
+  File "/app/PritiMusic/utils/stream/stream.py", line 217, in stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+[30-Mar-26 07:22:17 - ERROR] - PritiMusic.plugins.play.play - IndexError
+Traceback (most recent call last):
+  File "/app/PritiMusic/plugins/play/play.py", line 412, in play_commnd
+    await stream(
+  File "/app/PritiMusic/utils/stream/stream.py", line 217, in stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+[30-Mar-26 07:22:18 - ERROR] - pyrogram.dispatcher - Unhandled exception: Telegram says: [400 MESSAGE_ID_INVALID] (caused by "messages.EditMessage") Pyrogram 2.3.69 thinks: The message id is invalid
+Traceback (most recent call last):
+  File "/app/PritiMusic/plugins/play/play.py", line 412, in play_commnd
+    await stream(
+  File "/app/PritiMusic/utils/stream/stream.py", line 217, in stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 383, in _dispatch_to_handlers
+    await self._execute_handler(handler, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 410, in _execute_handler
+    await handler.callback(self.client, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/handlers/message_handler.py", line 154, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "/app/PritiMusic/utils/decorators/play.py", line 185, in wrapper
+    return await command(
+  File "/app/PritiMusic/plugins/play/play.py", line 432, in play_commnd
+    return await mystic.edit_text(err)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/types/messages_and_media/message.py", line 4504, in edit_text
+    return await self._client.edit_message_text(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/messages/edit_message_text.py", line 109, in edit_message_text
+    r = await self.invoke(rpc)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/advanced/invoke.py", line 80, in invoke
+    r = await self.session.invoke(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/session/session.py", line 420, in invoke
+    return await self.send(query, timeout=timeout)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/session/session.py", line 377, in send
+    RPCError.raise_it(result, type(data))
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/errors/rpc_error.py", line 93, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.bad_request_400.MessageIdInvalid: Telegram says: [400 MESSAGE_ID_INVALID] (caused by "messages.EditMessage") Pyrogram 2.3.69 thinks: The message id is invalid
+[30-Mar-26 07:22:23 - ERROR] - asyncio - Task exception was never retrieved
+future: <Task finished name='Task-476386' coro=<Call.decorators.<locals>.stream_end_handler1() done, defined at /app/PritiMusic/core/call.py:640> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "/app/PritiMusic/core/call.py", line 644, in stream_end_handler1
+    await self.change_stream(client, update.chat_id)
+  File "/app/PritiMusic/core/call.py", line 619, in change_stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+[30-Mar-26 07:22:23 - ERROR] - PritiMusic.plugins.play.play - IndexError
+Traceback (most recent call last):
+  File "/app/PritiMusic/plugins/play/play.py", line 412, in play_commnd
+    await stream(
+  File "/app/PritiMusic/utils/stream/stream.py", line 217, in stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+[30-Mar-26 07:22:25 - ERROR] - pyrogram.dispatcher - Unhandled exception: Telegram says: [400 MESSAGE_ID_INVALID] (caused by "messages.EditMessage") Pyrogram 2.3.69 thinks: The message id is invalid
+Traceback (most recent call last):
+  File "/app/PritiMusic/plugins/play/play.py", line 412, in play_commnd
+    await stream(
+  File "/app/PritiMusic/utils/stream/stream.py", line 217, in stream
+    db[chat_id][0]["mystic"] = run
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 383, in _dispatch_to_handlers
+    await self._execute_handler(handler, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 410, in _execute_handler
+    await handler.callback(self.client, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/handlers/message_handler.py", line 154, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "/app/PritiMusic/utils/decorators/play.py", line 185, in wrapper
+    return await command(
+  File "/app/PritiMusic/plugins/play/play.py", line 432, in play_commnd
+    return await mystic.edit_text(err)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/types/messages_and_media/message.py", line 4504, in edit_text
+    return await self._client.edit_message_text(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/messages/edit_message_text.py", line 109, in edit_message_text
+    r = await self.invoke(rpc)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/advanced/invoke.py", line 80, in invoke
+    r = await self.session.invoke(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/session/session.py", line 420, in invoke
+    return await self.send(query, timeout=timeout)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/session/session.py", line 377, in send
+    RPCError.raise_it(result, type(data))
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/errors/rpc_error.py", line 93, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.bad_request_400.MessageIdInvalid: Telegram says: [400 MESSAGE_ID_INVALID] (caused by "messages.EditMessage") Pyrogram 2.3.69 thinks: The message id is invalid
+[30-Mar-26 07:51:38 - ERROR] - pyrogram.dispatcher - Unhandled exception: Invalid file. Expected a file path as string or a binary (not text) file pointer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 383, in _dispatch_to_handlers
+    await self._execute_handler(handler, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 410, in _execute_handler
+    await handler.callback(self.client, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/handlers/message_handler.py", line 154, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "/app/PritiMusic/utils/decorators/play.py", line 77, in wrapper
+    return await message.reply_photo(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/types/messages_and_media/message.py", line 3157, in reply_photo
+    return await self._client.send_photo(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/messages/send_photo.py", line 237, in send_photo
+    file = await self.save_file(photo, progress=progress, progress_args=progress_args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/advanced/save_file.py", line 120, in save_file
+    raise ValueError("Invalid file. Expected a file path as string or a binary (not text) file pointer")
+ValueError: Invalid file. Expected a file path as string or a binary (not text) file pointer
+[30-Mar-26 07:51:41 - ERROR] - pyrogram.dispatcher - Unhandled exception: Invalid file. Expected a file path as string or a binary (not text) file pointer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 383, in _dispatch_to_handlers
+    await self._execute_handler(handler, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/dispatcher.py", line 410, in _execute_handler
+    await handler.callback(self.client, *args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/handlers/message_handler.py", line 154, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "/app/PritiMusic/utils/decorators/play.py", line 77, in wrapper
+    return await message.reply_photo(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/types/messages_and_media/message.py", line 3157, in reply_photo
+    return await self._client.send_photo(
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/messages/send_photo.py", line 237, in send_photo
+    file = await self.save_file(photo, progress=progress, progress_args=progress_args)
+  File "/usr/local/lib/python3.10/site-packages/pyrogram/methods/advanced/save_file.py", line 120, in save_file
+    raise ValueError("Invalid file. Expected a file path as string or a binary (not text) file pointer")
+ValueError: Invalid file. Expected a file path as string or a binary (not text) file pointer
+[31-Mar-26 02:24:49 - ERROR] - PritiMusic.plugins.play.play - FileNotFoundError
+Traceback (most recent call last):
+  File "/app/PritiMusic/plugins/play/play.py", line 412, in play_commnd
+    await stream(
+  File "/app/PritiMusic/utils/stream/stream.py", line 182, in stream
+    await Lucky.join_call(
+  File "/app/PritiMusic/core/call.py", line 353, in join_call
+    await assistant_to_join.join_group_call(
+  File "/usr/local/lib/python3.10/site-packages/pytgcalls/methods/groups/join_group_call.py", line 168, in join_group_call
+    await FileManager.check_file_exist(
+  File "/usr/local/lib/python3.10/site-packages/pytgcalls/file_manager.py", line 47, in check_file_exist
+    if S_ISFIFO(os.stat(path).st_mode):
+FileNotFoundError: [Errno 2] No such file or directory: 'None'
