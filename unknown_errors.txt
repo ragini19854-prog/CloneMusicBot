@@ -1,0 +1,1 @@
+2026-05-08 08:43:56.166462	[400 USER_DEACTIVATED]	auth.ImportBotAuthorization

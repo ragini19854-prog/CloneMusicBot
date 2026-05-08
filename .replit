@@ -1,0 +1,50 @@
+modules = ["python-3.12", "bash"]
+[agent]
+expertMode = true
+stack = "BEST_EFFORT_FALLBACK"
+
+[nix]
+channel = "stable-25_05"
+packages = ["cacert", "ffmpeg-full", "freetype", "lcms2", "libimagequant", "libjpeg", "libtiff", "libwebp", "libxcrypt", "libyaml", "openjpeg", "tcl", "tk", "zlib"]
+
+[userenv]
+
+[userenv.shared]
+API_ID = "33418562"
+API_HASH = "316b85e7eef2e2f1615dee2cdee68be5"
+LOGGER_ID = "-1003732221998"
+OWNER_ID = "7080054099"
+OWNER_USERNAME = "mvtyy"
+SUPPORT_CHANNEL = "https://t.me/+Qzy2vnoy3g00OTE1"
+SUPPORT_CHAT = "https://t.me/+jg6CtmDzz3E3ZWNl"
+GITHUB = "https://github.com/SOMEBOTS-TG"
+START_IMG_URL = "https://files.catbox.moe/s2k6fk.jpg"
+PING_IMG_URL = "https://files.catbox.moe/0m7avf.jpg"
+MONGO_DB_URI = "mongodb+srv://clonymusic_db_user:C0eyYWxMmqsIQWdG@cluster0.cqkfcmv.mongodb.net/?appName=Cluster0"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 -m PritiMusic"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[deployment]
+deploymentTarget = "vm"
+run = ["python3", "-m", "PritiMusic"]

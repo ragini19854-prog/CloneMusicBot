@@ -279,3 +279,23 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.10/site-packages/pytgcalls/file_manager.py", line 47, in check_file_exist
     if S_ISFIFO(os.stat(path).st_mode):
 FileNotFoundError: [Errno 2] No such file or directory: 'None'
+[08-May-26 08:36:59 - WARNING] - PritiMusic.core.mongo - No MONGO DB URL found. LOL
+[08-May-26 08:37:36 - INFO] - PritiMusic.core.dir - Directories Updated.
+[08-May-26 08:37:36 - INFO] - PritiMusic.core.git - Git Client Found [VPS DEPLOYER]
+[08-May-26 08:37:36 - INFO] - PritiMusic.misc - 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 𝗟𝗢𝗔𝗗 𝗕𝗔𝗕𝗬🍫........
+[08-May-26 08:37:36 - INFO] - PritiMusic.core.bot - Starting Bot...
+[08-May-26 08:37:38 - ERROR] - asyncio - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fdd3260fd40>
+[08-May-26 08:37:38 - ERROR] - asyncio - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x7fdd3227d250>, 97538.6865408)])']
+connector: <aiohttp.connector.TCPConnector object at 0x7fdd4b62d220>
+[08-May-26 08:43:50 - INFO] - PritiMusic.core.dir - Directories Updated.
+[08-May-26 08:43:50 - INFO] - PritiMusic.core.git - Git Client Found [VPS DEPLOYER]
+[08-May-26 08:43:50 - INFO] - PritiMusic.misc - 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 𝗟𝗢𝗔𝗗 𝗕𝗔𝗕𝗬🍫........
+[08-May-26 08:43:50 - INFO] - PritiMusic.core.bot - Starting Bot...
+[08-May-26 08:43:51 - INFO] - PritiMusic.misc - 𝗦𝗨𝗗𝗢 𝗨𝗦𝗘𝗥 𝗗𝗢𝗡𝗘✨🎋.
+[08-May-26 08:43:56 - ERROR] - asyncio - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f98db361e80>
+[08-May-26 08:43:56 - ERROR] - asyncio - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x7f98db365010>, 97912.242947583)])']
+connector: <aiohttp.connector.TCPConnector object at 0x7f98dbfa64e0>
