@@ -22,7 +22,7 @@ START_IMG_URL = "https://files.catbox.moe/s2k6fk.jpg"
 PING_IMG_URL = "https://files.catbox.moe/0m7avf.jpg"
 MONGO_DB_URI = "mongodb+srv://bsdk:betichod@cluster0.fgj1r9z.mongodb.net/?retryWrites=true&w=majority"
 BOT_TOKEN = "8693231254:AAFmLowrMpefZiS9XT8vfG3vUVPvuRu8E-E"
-STRING_SESSION = "BAIcVYAAeFfJVz8vzIxBdVUY4Zutu6-tS7fcyGxXJ6B7XCJ8mKLxqkWGO6YqLNLzV4jOCpOaB6OQpdaWsMtbjMaMxV2hXto6XmRRDFvcNFnkoDs7y8gHuFPscba0kuopngdKdGuf0X_EOV14DTbz9G9F8VThvtK6ZXIjPeEV4AbD5_E1cF3utPjV-8AQd8fyeUqP_ihf6P3H-R4byS0ROGpF1LNvrGwWj48gMsKbOEdJszOlH1_FDDZFNXnF_Eb7ksLnkmonWWoD-wWW9wVKCp_JhcV8c6a8lhDijR-NSpj00l-2h8bgp1K6IMdGfMU3EJq-Wm7UoyUd0ntvGy5HxOJ11RWPsAAAAAH3Iwt-AA"
+STRING_SESSION = "BAIcVYAAo0EwsoD20I9q_mMz1WkS950BeWAscX9ZRvHKdZVT85YYB-65-V2A3AOlvSjMTJ0AOHUoetXdHtLetW9T2AwukidPJyJyBINrWtFqoW9559iUVF55PfDjpPyFYFX2EI6Au5umqGU_gDn_Dg9yGmjYIdOkLbPXrhswnH1-UZ3CigloxMosDnhzY8wg5qks0_48oQKCD7LstpCzjULDdwPks358wXjtzIafQXYX5g278N3GK6ZfvMmxIq8IClcjhdGDl0GUaPTA0z-2uLGzsaSl9_gnQu7aP-qz_NtYZXj12fye_AcVi6seIN_7gIgRmVyU4m4O4RL0A0klJUycGqHRMQAAAAH3Iwt-AA"
 
 [workflows]
 runButton = "Project"
