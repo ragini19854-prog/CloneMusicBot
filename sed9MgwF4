@@ -10,19 +10,17 @@ packages = ["cacert", "ffmpeg-full", "freetype", "lcms2", "libimagequant", "libj
 [userenv]
 
 [userenv.shared]
-API_ID = "35411328"
-API_HASH = "4c8d3c8f5d3483296f5fb530ea2cfcc6"
-LOGGER_ID = "-1003774441740"
-OWNER_ID = "8441236350"
+API_ID = "33418562"
+API_HASH = "316b85e7eef2e2f1615dee2cdee68be5"
+LOGGER_ID = "-1003732221998"
+OWNER_ID = "7080054099"
 OWNER_USERNAME = "mvtyy"
-SUPPORT_CHANNEL = "https://t.me/+1NRRqUd1replNTM1"
-SUPPORT_CHAT = "https://t.me/+Li5WLVyQTwNkOTQ1"
-GITHUB = "https://t.me/YOUR_fucker_dad"
+SUPPORT_CHANNEL = "https://t.me/+Qzy2vnoy3g00OTE1"
+SUPPORT_CHAT = "https://t.me/+jg6CtmDzz3E3ZWNl"
+GITHUB = "https://github.com/SOMEBOTS-TG"
 START_IMG_URL = "https://files.catbox.moe/s2k6fk.jpg"
 PING_IMG_URL = "https://files.catbox.moe/0m7avf.jpg"
-MONGO_DB_URI = "mongodb+srv://bsdk:betichod@cluster0.fgj1r9z.mongodb.net/?retryWrites=true&w=majority"
-BOT_TOKEN = "8693231254:AAFmLowrMpefZiS9XT8vfG3vUVPvuRu8E-E"
-STRING_SESSION = "BAIcVYAAeFfJVz8vzIxBdVUY4Zutu6-tS7fcyGxXJ6B7XCJ8mKLxqkWGO6YqLNLzV4jOCpOaB6OQpdaWsMtbjMaMxV2hXto6XmRRDFvcNFnkoDs7y8gHuFPscba0kuopngdKdGuf0X_EOV14DTbz9G9F8VThvtK6ZXIjPeEV4AbD5_E1cF3utPjV-8AQd8fyeUqP_ihf6P3H-R4byS0ROGpF1LNvrGwWj48gMsKbOEdJszOlH1_FDDZFNXnF_Eb7ksLnkmonWWoD-wWW9wVKCp_JhcV8c6a8lhDijR-NSpj00l-2h8bgp1K6IMdGfMU3EJq-Wm7UoyUd0ntvGy5HxOJ11RWPsAAAAAH3Iwt-AA"
+MONGO_DB_URI = "mongodb+srv://clonymusic_db_user:C0eyYWxMmqsIQWdG@cluster0.cqkfcmv.mongodb.net/?appName=Cluster0"
 
 [workflows]
 runButton = "Project"
@@ -40,12 +38,12 @@ args = "Start application"
 name = "Start application"
 author = "agent"
 
-[workflows.workflow.metadata]
-outputType = "console"
-
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "python3 -m MadaraMusic"
+
+[workflows.workflow.metadata]
+outputType = "console"
 
 [deployment]
 deploymentTarget = "vm"
