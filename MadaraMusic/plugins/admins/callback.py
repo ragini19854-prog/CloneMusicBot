@@ -82,7 +82,7 @@ async def clone_page_cb(client, CallbackQuery, _):
         ),
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="🎁 ᴅᴏɴᴀᴛᴇ (₹𝟷𝟶)", callback_data="donate_lucky")],
+                [InlineKeyboardButton(text="🎁 ᴅᴏɴᴀᴛᴇ (₹𝟷𝟶)", callback_data="donate_Madara")],
                 [InlineKeyboardButton(text="⌯ ʙᴀᴄᴋ ⌯", callback_data="settingsback_helper")]
             ]
         )
@@ -117,7 +117,7 @@ async def gib_source_cb(client, CallbackQuery, _):
     )
 
 # --- DONATE PAGE ---
-@app.on_callback_query(filters.regex("donate_lucky") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("donate_Madara") & ~BANNED_USERS)
 @languageCB
 async def donate_callback(client, CallbackQuery, _):
     try:
@@ -128,8 +128,8 @@ async def donate_callback(client, CallbackQuery, _):
     donate_text = """
 <blockquote expandable><b><u>❤️ sᴜᴘᴘᴏʀᴛ ᴍᴜsɪᴄ ʙᴏᴛ</u></b>
 <b>ɪ ᴡᴏʀᴋ ʜᴀʀᴅ ᴛᴏ ᴍᴀᴋᴇ ᴛʜᴇsᴇ ᴀᴍᴀᴢɪɴɢ ᴍᴜsɪᴄ ʙᴏᴛs ғᴏʀ ʏᴏᴜ.</b>
-<b>ᴘʟᴇᴀsᴇ ᴅᴏɴᴀᴛᴇ ᴏɴʟʏ ₹𝟷𝟶 (ᴊᴜsᴛ ᴀ ᴄᴜᴘ ᴏғ ᴛᴇᴀ ᴘʀɪᴄᴇ).</b>
-<b>sᴄᴀɴ ᴛʜᴇ ǫʀ ᴄᴏᴅᴇ ᴀʙᴏᴠᴇ ᴛᴏ ᴅᴏɴᴀᴛᴇ ᴠɪᴀ ɢᴘᴀʏ, ᴘʜᴏɴᴇᴘᴇ ᴏʀ ᴘᴀʏᴛᴍ.</b>
+<b>ᴘʟᴇᴀsᴇ ᴅᴏɴᴀᴛᴇ ᴏɴʟʏ ₹𝟷𝟶.</b>
+<b>sᴄᴀɴ ᴛʜᴇ ǫʀ ᴄᴏᴅᴇ ᴀʙᴏᴠᴇ ᴛᴏ ᴅᴏɴᴀᴛᴇ.</b>
 <b>ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ʏᴏᴜʀ ʟᴏᴠᴇ! ✨</b></blockquote>
 """
     await CallbackQuery.edit_message_media(
