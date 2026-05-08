@@ -126,15 +126,15 @@ async def donate_callback(client, CallbackQuery, _):
         pass
     
     donate_text = """
-<blockquote expandable><b><u>❤️ sᴜᴘᴘᴏʀᴛ ᴍᴜsɪᴄ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ</u></b>
-<b>ʜᴇʟʟᴏ ᴜsᴇʀs, ɪ ᴡᴏʀᴋ ʜᴀʀᴅ ᴛᴏ ᴍᴀᴋᴇ ᴛʜᴇsᴇ ᴀᴍᴀᴢɪɴɢ ᴍᴜsɪᴄ ʙᴏᴛs ғᴏʀ ʏᴏᴜ.</b>
+<blockquote expandable><b><u>❤️ sᴜᴘᴘᴏʀᴛ ᴍᴜsɪᴄ ʙᴏᴛ</u></b>
+<b>ɪ ᴡᴏʀᴋ ʜᴀʀᴅ ᴛᴏ ᴍᴀᴋᴇ ᴛʜᴇsᴇ ᴀᴍᴀᴢɪɴɢ ᴍᴜsɪᴄ ʙᴏᴛs ғᴏʀ ʏᴏᴜ.</b>
 <b>ᴘʟᴇᴀsᴇ ᴅᴏɴᴀᴛᴇ ᴏɴʟʏ ₹𝟷𝟶 (ᴊᴜsᴛ ᴀ ᴄᴜᴘ ᴏғ ᴛᴇᴀ ᴘʀɪᴄᴇ).</b>
 <b>sᴄᴀɴ ᴛʜᴇ ǫʀ ᴄᴏᴅᴇ ᴀʙᴏᴠᴇ ᴛᴏ ᴅᴏɴᴀᴛᴇ ᴠɪᴀ ɢᴘᴀʏ, ᴘʜᴏɴᴇᴘᴇ ᴏʀ ᴘᴀʏᴛᴍ.</b>
 <b>ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ʏᴏᴜʀ ʟᴏᴠᴇ! ✨</b></blockquote>
 """
     await CallbackQuery.edit_message_media(
         media=InputMediaPhoto(
-            media="https://files.catbox.moe/c0akch.jpg",
+            media="https://i.ibb.co/Hfhp24mq/image.jpg",
             caption=donate_text
         ),
         reply_markup=InlineKeyboardMarkup(
