@@ -77,12 +77,12 @@ async def clone_page_cb(client, CallbackQuery, _):
     )
     await CallbackQuery.edit_message_media(
         media=InputMediaVideo(
-            media="https://files.catbox.moe/rxiwb3.mp4",
+            media="https://files.catbox.moe/sit1e6.mp4",
             caption=clone_text
         ),
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="🎁 ᴅᴏɴᴀᴛᴇ (₹𝟷𝟶)", callback_data="donate_lucky")],
+                [InlineKeyboardButton(text="ᴏᴡɴᴇʀ", user_id=config.OWNER_ID)],
                 [InlineKeyboardButton(text="⌯ ʙᴀᴄᴋ ⌯", callback_data="settingsback_helper")]
             ]
         )
@@ -94,14 +94,18 @@ async def clone_page_cb(client, CallbackQuery, _):
 async def gib_source_cb(client, CallbackQuery, _):
     await CallbackQuery.answer()
     source_text = (
-        "**📂 ʙᴏᴛ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :**\n\n"
-        "<b>ʜᴇʀᴇ ɪs ᴛʜᴇ ᴏғғɪᴄɪᴀʟ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ᴏғ ᴛʜɪs ʙᴏᴛ.</b>\n"
-        "<b>ʏᴏᴜ ᴄᴀɴ ғᴏʀᴋ ᴛʜɪs ʀᴇᴘᴏ ᴀɴᴅ ᴍᴀᴋᴇ ʏᴏᴜʀ ᴏᴡɴ ʙᴏᴛ.</b>\n\n"
-        "🔗 **ɢɪᴛʜᴜʙ:** [Click Here](https://t.me/+Ax_LrCUfmAYwOGY1)"
-    )
+    "Jᴀᴀ ʜᴀɪ ᴘᴀᴅʜᴀɪ ᴋʀ Jᴀᴀᴋᴇ ᴀᴀʏᴀ ʙᴀᴅᴀ ʀᴇᴘᴏ ᴅᴇᴋʜɴᴇ ᴡᴀʟᴀ !\n"
+    "➥ᴜᴘᴛɪᴍᴇ: 𝟷ʜ:𝟹𝟺ᴍ:𝟻𝟺s\n"
+    "➥sᴇʀᴠᴇʀ sᴛᴏʀᴀɢᴇ: 𝟸𝟽.𝟺%\n"
+    "➥ᴄᴘᴜ ʟᴏᴀᴅ: 𝟷𝟷.𝟸%\n"
+    "➥ʀᴀᴍ ᴄᴏɴsᴜᴍᴘᴛɪᴏɴ: 𝟷𝟽.𝟻%\n"
+    "•──────────────────•\n"
+    "ᴘᴏᴡєʀєᴅ ʙʏ» |𝐌 ᴀ ᴅ ᴀ ʀ ᴀ •|\n"
+    "•──────────────────•\n"
+)
     await CallbackQuery.edit_message_media(
         media=InputMediaVideo(
-            media="https://files.catbox.moe/rxiwb3.mp4",
+            media="https://files.catbox.moe/sit1e6.mp4",
             caption=source_text
         ),
         reply_markup=InlineKeyboardMarkup(
