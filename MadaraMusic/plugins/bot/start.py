@@ -21,16 +21,10 @@ from MadaraMusic.utils.database import (
 from MadaraMusic.utils.decorators.language import LanguageStart
 from MadaraMusic.utils.formatters import get_readable_time
 from MadaraMusic.utils.inline import help_pannel, private_panel, start_panel
+from MadaraMusic.utils.sys import bot_sys_stats
 from config import BANNED_USERS, START_IMG_URL, CMBOT
 from strings import get_string
 
-# Telegram Message Effect IDs
-EFFECT_ID = [
-    5046509860389126442,
-    5107584321108051014,
-    5104841245755180586,
-    5159385139981059251,
-]
 
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
@@ -39,24 +33,14 @@ async def start_pm(client, message: Message, _):
     loading_1 = await message.reply_text(random.choice(CMBOT))
     await add_served_user(message.from_user.id)
 
-    await loading_1.edit_text("<b>ʜʟᴏ</b>")
-    await asyncio.sleep(0.4)
-    await loading_1.edit_text("<b>ʜʟᴏ ʙᴀʙʏ</b>")
-    await asyncio.sleep(0.4)
-    await loading_1.edit_text("<b>ʟᴏᴀᴅɪɴɢ</b>")
+    await loading_1.edit_text("<b>ʜʟᴏ ✨</b>")
     await asyncio.sleep(0.3)
     await loading_1.edit_text("<b>ʟᴏᴀᴅɪɴɢ.</b>")
-    await asyncio.sleep(0.3)
+    await asyncio.sleep(0.2)
     await loading_1.edit_text("<b>ʟᴏᴀᴅɪɴɢ..</b>")
-    await asyncio.sleep(0.3)
+    await asyncio.sleep(0.2)
     await loading_1.edit_text("<b>ʟᴏᴀᴅɪɴɢ...</b>")
     await asyncio.sleep(0.3)
-    await loading_1.edit_text("<b>˹ 𝐒ʜʀɪsᴛɪ</b>")
-    await asyncio.sleep(0.4)
-    await loading_1.edit_text("<b>˹ 𝐒ʜʀɪsᴛɪ ꭙ</b>")
-    await asyncio.sleep(0.4)
-    await loading_1.edit_text("<b>˹ 𝐒ʜʀɪsᴛɪ ꭙ 𝐌ᴜsɪᴄ ♪ ˼</b>")
-    await asyncio.sleep(0.8)
     await loading_1.delete()
 
     if len(message.text.split()) > 1:
@@ -94,12 +78,10 @@ async def start_pm(client, message: Message, _):
                 title, duration, views, published, channellink, channel, app.mention
             )
             key = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text=_["S_B_8"], url=link),
-                        InlineKeyboardButton(text=_["S_B_9"], url=config.SUPPORT_CHAT),
-                    ],
-                ]
+                [[
+                    InlineKeyboardButton(text=_["S_B_8"], url=link),
+                    InlineKeyboardButton(text=_["S_B_9"], url=config.SUPPORT_CHAT),
+                ]]
             )
             await m.delete()
             await app.send_photo(
@@ -115,11 +97,18 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        # This part requires Pyrofork >= 2.2.20
+        UP, CPU, RAM, DISK = await bot_sys_stats()
+        uptime = int(time.time() - _boot_)
         await message.reply_photo(
             random.choice(START_IMG_URL),
-            message_effect_id=random.choice(EFFECT_ID),  # Effect ID line enabled
-            caption=_["start_2"].format(message.from_user.mention, app.mention),
+            caption=_["start_2"].format(
+                message.from_user.mention,
+                app.mention,
+                get_readable_time(uptime),
+                DISK,
+                CPU,
+                RAM,
+            ),
             reply_markup=InlineKeyboardMarkup(out),
         )
         if await is_on_off(2):
