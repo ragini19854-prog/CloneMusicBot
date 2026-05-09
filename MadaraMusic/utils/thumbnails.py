@@ -10,138 +10,63 @@ from py_yt import VideosSearch
 from MadaraMusic import app
 from config import YOUTUBE_IMG_URL
 
-def changeImageSize(maxWidth, maxHeight, image):
-    widthRatio = maxWidth / image.size[0]
-    heightRatio = maxHeight / image.size[1]
-    newWidth = int(widthRatio * image.size[0])
-    newHeight = int(heightRatio * image.size[1])
-    newImage = image.resize((newWidth, newHeight))
-    return newImage
+FONT_BOLD = "assets/font_bold.ttf"
+FONT_LIGHT = "assets/font_light.ttf"
+TEMPLATE_PATH = "assets/bg_template.png"  # Use your new purple anime template
+OUTPUT_DIR = "cache"
 
-def clear(text):
-    list = text.split(" ")
-    title = ""
-    for i in list:
-        if len(title) + len(i) < 60:
-            title += " " + i
-    return title.strip()
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# ✅ Helper for Random Fallback
-def get_random_fallback_img():
-    if YOUTUBE_IMG_URL:
-        if isinstance(YOUTUBE_IMG_URL, list):
-            return random.choice(YOUTUBE_IMG_URL)
-        return YOUTUBE_IMG_URL
-    return "https://telegra.ph/file/2e3d368e77c449c287430.jpg" # Fallback
-
-async def get_thumb(videoid):
-    if os.path.isfile(f"cache/{videoid}.png"):
-        return f"cache/{videoid}.png"
-
-    url = f"https://www.youtube.com/watch?v={videoid}"
-    try:
-        results = VideosSearch(url, limit=1)
-        for result in (await results.next())["result"]:
-            try:
-                title = result["title"]
-                title = re.sub("\W+", " ", title)
-                title = title.title()
-            except:
-                title = "Unsupported Title"
-            try:
-                duration = result["duration"]
-            except:
-                duration = "Unknown Mins"
-            thumbnail = result["thumbnails"][0]["url"].split("?")[0]
-            try:
-                views = result["viewCount"]["short"]
-            except:
-                views = "Unknown Views"
-            try:
-                channel = result["channel"]["name"]
-            except:
-                channel = "Unknown Channel"
-
-        async with aiohttp.ClientSession() as session:
-            async with session.get(thumbnail) as resp:
-                if resp.status == 200:
-                    f = await aiofiles.open(f"cache/thumb{videoid}.png", mode="wb")
+async def download_image(url, path):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as resp:
+            if resp.status == 200:
+                async with aiofiles.open(path, "wb") as f:
                     await f.write(await resp.read())
-                    await f.close()
+                return True
+    return False
 
-        youtube = Image.open(f"cache/thumb{videoid}.png")
-        image1 = changeImageSize(1280, 720, youtube)
-        image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(10))
-        enhancer = ImageEnhance.Brightness(background)
-        background = enhancer.enhance(0.5)
-        draw = ImageDraw.Draw(background)
-        
-        try:
-            arial = ImageFont.truetype("MadaraMusic/assets/font2.ttf", 30)
-            font = ImageFont.truetype("MadaraMusic/assets/font.ttf", 30)
-        except:
-            arial = ImageFont.load_default()
-            font = ImageFont.load_default()
-            
-        # Handling Font Size (Compatible with old & new Pillow versions)
-        try:
-            # New Pillow
-            left, top, right, bottom = draw.textbbox((0, 0), "CLONNE MUSIC BOT    ", font=font)
-            text_width = right - left
-        except:
-            # Old Pillow
-            try:
-                text_width, _ = draw.textsize("CLONNE MUSIC BOT    ", font=font)
-            except:
-                text_width = 300
+async def generate_thumbnail(videoid, title, duration, views, channel_name):
+    thumb_path = os.path.join(OUTPUT_DIR, f"{videoid}.png")
+    final_path = os.path.join(OUTPUT_DIR, f"final_{videoid}.png")
 
-        draw.text((1280 - text_width - 10, 10), "CLONNE MUSIC BOT    ", fill="green", font=font)
-        
-        draw.text(
-            (55, 560),
-            f"{channel} | {views[:23]}",
-            (255, 255, 255),
-            font=arial,
-        )
-        draw.text(
-            (57, 600),
-            clear(title),
-            (255, 255, 255),
-            font=font,
-        )
-        draw.line(
-            [(55, 660), (1220, 660)],
-            fill="white",
-            width=5,
-            joint="curve",
-        )
-        draw.ellipse(
-            [(918, 648), (942, 672)],
-            outline="white",
-            fill="white",
-            width=15,
-        )
-        draw.text(
-            (36, 685),
-            "00:00",
-            (255, 255, 255),
-            font=arial,
-        )
-        draw.text(
-            (1185, 685),
-            f"{duration[:23]}",
-            (255, 255, 255),
-            font=arial,
-        )
-        try:
-            os.remove(f"cache/thumb{videoid}.png")
-        except:
-            pass
-        background.save(f"cache/{videoid}.png")
-        return f"cache/{videoid}.png"
-        
+    # Download YT thumbnail
+    yt_url = f"https://img.youtube.com/vi/{videoid}/maxresdefault.jpg"
+    await download_image(yt_url, thumb_path)
+
+    try:
+        base = Image.open(TEMPLATE_PATH).convert("RGBA")
+        cover = Image.open(thumb_path).convert("RGBA")
     except Exception as e:
-        print(e)
-        # ✅ FIX: Return Single Random Image instead of List
-        return get_random_fallback_img()
+        return f"Error: {e}"
+
+    # Resize & paste cover (adjust position/size as per your template)
+    cover = cover.resize((285, 160))
+    base.paste(cover, (50, 520), cover)
+
+    draw = ImageDraw.Draw(base)
+
+    try:
+        title_font = ImageFont.truetype(FONT_BOLD, 60)
+        info_font = ImageFont.truetype(FONT_LIGHT, 30)
+        brand_font = ImageFont.truetype(FONT_BOLD, 85)
+    except:
+        title_font = info_font = brand_font = ImageFont.load_default()
+
+    # Text overlays (adjust coordinates for new design)
+    draw.text((70, 180), channel_name, fill="white", font=brand_font)
+    display_title = (title[:28] + "...") if len(title) > 28 else title
+    draw.text((360, 545), display_title.upper(), fill="white", font=title_font)
+    info_text = f"YouTube • {views} Views • {duration}"
+    draw.text((360, 685), info_text, fill="#E0E0E0", font=info_font)
+
+    # Progress bar
+    draw.line([(50, 815), (1030, 815)], fill="#404040", width=8)
+    draw.line([(50, 815), (520, 815)], fill="#FF00FF", width=8)  # Longer progress
+    draw.ellipse([(510, 805), (530, 825)], fill="white")
+
+    base.save(final_path)
+    if os.path.exists(thumb_path):
+        os.remove(thumb_path)
+
+    return final_path
