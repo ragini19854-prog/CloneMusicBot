@@ -3,7 +3,7 @@ import random
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from MadaraMusic import YouTube, app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.misc import SUDOERS, db
 from MadaraMusic.utils.database import (
     get_active_chats,
@@ -287,7 +287,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_1"], show_alert=True)
         await CallbackQuery.answer()
         await music_off(chat_id)
-        await Lucky.pause_stream(chat_id)
+        await Madara.pause_stream(chat_id)
         buttons = [
             [
                 InlineKeyboardButton(
@@ -312,7 +312,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_3"], show_alert=True)
         await CallbackQuery.answer()
         await music_on(chat_id)
-        await Lucky.resume_stream(chat_id)
+        await Madara.resume_stream(chat_id)
         buttons_resume = [
             [
                 InlineKeyboardButton(
@@ -340,7 +340,7 @@ async def del_back_playlist(client, CallbackQuery, _):
 
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
-        await Lucky.stop_stream(chat_id)
+        await Madara.stop_stream(chat_id)
         await set_loop(chat_id, 0)
         
         # ✅ Random Image + Spoiler
@@ -360,7 +360,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_45"], show_alert=True)
         await CallbackQuery.answer()
         await mute_on(chat_id)
-        await Lucky.mute_stream(chat_id)
+        await Madara.mute_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_46"].format(mention))
 
     elif command == "Unmute":
@@ -368,7 +368,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_47"], show_alert=True)
         await CallbackQuery.answer()
         await mute_off(chat_id)
-        await Lucky.unmute_stream(chat_id)
+        await Madara.unmute_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_48"].format(mention))
 
     elif command == "Loop":
@@ -418,7 +418,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         reply_markup=close_markup(_),
                     )
                     try:
-                        return await Lucky.stop_stream(chat_id)
+                        return await Madara.stop_stream(chat_id)
                     except:
                         return
             except:
@@ -430,7 +430,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         ),
                         reply_markup=close_markup(_),
                     )
-                    return await Lucky.stop_stream(chat_id)
+                    return await Madara.stop_stream(chat_id)
                 except:
                     return
         else:
@@ -465,7 +465,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await Lucky.skip_stream(chat_id, link, video=status, image=image)
+                await Madara.skip_stream(chat_id, link, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             
@@ -506,7 +506,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await Lucky.skip_stream(chat_id, file_path, video=status, image=image)
+                await Madara.skip_stream(chat_id, file_path, video=status, image=image)
             except:
                 return await mystic.edit_text(_["call_6"])
             
@@ -532,7 +532,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             
         elif "index_" in queued:
             try:
-                await Lucky.skip_stream(chat_id, videoid, video=status)
+                await Madara.skip_stream(chat_id, videoid, video=status)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             
@@ -558,7 +558,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 except:
                     image = None
             try:
-                await Lucky.skip_stream(chat_id, queued, video=status, image=image)
+                await Madara.skip_stream(chat_id, queued, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             
@@ -649,7 +649,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             if n == 0:
                 return await mystic.edit_text(_["admin_22"])
         try:
-            await Lucky.seek_stream(
+            await Madara.seek_stream(
                 chat_id,
                 file_path,
                 seconds_to_min(to_seek),

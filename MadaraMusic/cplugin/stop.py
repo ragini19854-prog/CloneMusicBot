@@ -2,7 +2,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 
 from MadaraMusic import app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.utils.database import set_loop
 from MadaraMusic.utils.inline import close_markup
 from config import BANNED_USERS
@@ -25,7 +25,7 @@ async def stop_music(cli, message: Message, _, chat_id):
         return
     
     # Stream Stop Karega
-    await Lucky.stop_stream(chat_id)
+    await Madara.stop_stream(chat_id)
     
     # Loop Reset Karega
     await set_loop(chat_id, 0)

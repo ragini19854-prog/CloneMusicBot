@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from MadaraMusic import app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.misc import SUDOERS, db
 from MadaraMusic.utils import AdminRightsCheck
 from MadaraMusic.utils.database import is_active_chat, is_nonadmin_chat
@@ -94,7 +94,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         text=_["admin_32"].format(CallbackQuery.from_user.mention),
     )
     try:
-        await Lucky.speedup_stream(
+        await Madara.speedup_stream(
             chat_id,
             file_path,
             speed,

@@ -4,7 +4,7 @@ from pyrogram.types import CallbackQuery, InputMediaVideo, InputMediaPhoto, Inli
 from pyrogram import filters
 
 from MadaraMusic import YouTube, app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.misc import SUDOERS, db
 from MadaraMusic.utils.database import (
     get_active_chats, get_lang, get_upvote_count, is_active_chat,
@@ -82,7 +82,7 @@ async def clone_page_cb(client, CallbackQuery, _):
         ),
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="🎁 ᴅᴏɴᴀᴛᴇ (₹𝟷𝟶)", callback_data="donate_Madara")],
+                [InlineKeyboardButton(text="🎁 ᴅᴏɴᴀᴛᴇ (₹𝟷𝟶)", callback_data="donate_lucky")],
                 [InlineKeyboardButton(text="⌯ ʙᴀᴄᴋ ⌯", callback_data="settingsback_helper")]
             ]
         )
@@ -94,14 +94,10 @@ async def clone_page_cb(client, CallbackQuery, _):
 async def gib_source_cb(client, CallbackQuery, _):
     await CallbackQuery.answer()
     source_text = (
-        𝐏ʟᴇᴀꜱᴇ 𝐂ʟɪᴄᴋ 𝐎ɴ 𝐒ᴏᴜʀᴄᴇ 𝐂ᴏᴅᴇ 𝐁ᴜᴛᴛᴏɴ 𝐁ᴇʟᴏᴡ !
-       <pre>||➥ᴜᴘᴛɪᴍᴇ: 𝟷ʜ:𝟹𝟺ᴍ:𝟻𝟺s
-       ➥sᴇʀᴠᴇʀ sᴛᴏʀᴀɢᴇ: 𝟸𝟽.𝟺%
-       ➥ᴄᴘᴜ ʟᴏᴀᴅ: 𝟷𝟷.𝟸%
-       ➥ʀᴀᴍ ᴄᴏɴsᴜᴍᴘᴛɪᴏɴ: 𝟷𝟽.𝟻%||</pre>
-       •──────────────────•
-       ᴘᴏᴡєʀєᴅ ʙʏ»|| [˹ 𝐅ᴜᴄᴋᴇʀ ꭙ 𝐎ᴡɴᴇʀ ♪˼](https://t.me/YOUR_fucker_dad)||
-       •──────────────────•
+        "**📂 ʙᴏᴛ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :**\n\n"
+        "<b>ʜᴇʀᴇ ɪs ᴛʜᴇ ᴏғғɪᴄɪᴀʟ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ᴏғ ᴛʜɪs ʙᴏᴛ.</b>\n"
+        "<b>ʏᴏᴜ ᴄᴀɴ ғᴏʀᴋ ᴛʜɪs ʀᴇᴘᴏ ᴀɴᴅ ᴍᴀᴋᴇ ʏᴏᴜʀ ᴏᴡɴ ʙᴏᴛ.</b>\n\n"
+        "🔗 **ɢɪᴛʜᴜʙ:** [Click Here](https://t.me/+Ax_LrCUfmAYwOGY1)"
     )
     await CallbackQuery.edit_message_media(
         media=InputMediaVideo(
@@ -117,7 +113,7 @@ async def gib_source_cb(client, CallbackQuery, _):
     )
 
 # --- DONATE PAGE ---
-@app.on_callback_query(filters.regex("donate_Madara") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("donate_lucky") & ~BANNED_USERS)
 @languageCB
 async def donate_callback(client, CallbackQuery, _):
     try:
@@ -126,15 +122,15 @@ async def donate_callback(client, CallbackQuery, _):
         pass
     
     donate_text = """
-<blockquote expandable><b><u>❤️ sᴜᴘᴘᴏʀᴛ ᴍᴜsɪᴄ ʙᴏᴛ</u></b>
-<b>ɪ ᴡᴏʀᴋ ʜᴀʀᴅ ᴛᴏ ᴍᴀᴋᴇ ᴛʜᴇsᴇ ᴀᴍᴀᴢɪɴɢ ᴍᴜsɪᴄ ʙᴏᴛs ғᴏʀ ʏᴏᴜ.</b>
-<b>ᴘʟᴇᴀsᴇ ᴅᴏɴᴀᴛᴇ ᴏɴʟʏ ₹𝟷𝟶.</b>
-<b>sᴄᴀɴ ᴛʜᴇ ǫʀ ᴄᴏᴅᴇ ᴀʙᴏᴠᴇ ᴛᴏ ᴅᴏɴᴀᴛᴇ.</b>
+<blockquote expandable><b><u>❤️ sᴜᴘᴘᴏʀᴛ ᴍᴜsɪᴄ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ</u></b>
+<b>ʜᴇʟʟᴏ ᴜsᴇʀs, ɪ ᴡᴏʀᴋ ʜᴀʀᴅ ᴛᴏ ᴍᴀᴋᴇ ᴛʜᴇsᴇ ᴀᴍᴀᴢɪɴɢ ᴍᴜsɪᴄ ʙᴏᴛs ғᴏʀ ʏᴏᴜ.</b>
+<b>ᴘʟᴇᴀsᴇ ᴅᴏɴᴀᴛᴇ ᴏɴʟʏ ₹𝟷𝟶 (ᴊᴜsᴛ ᴀ ᴄᴜᴘ ᴏғ ᴛᴇᴀ ᴘʀɪᴄᴇ).</b>
+<b>sᴄᴀɴ ᴛʜᴇ ǫʀ ᴄᴏᴅᴇ ᴀʙᴏᴠᴇ ᴛᴏ ᴅᴏɴᴀᴛᴇ ᴠɪᴀ ɢᴘᴀʏ, ᴘʜᴏɴᴇᴘᴇ ᴏʀ ᴘᴀʏᴛᴍ.</b>
 <b>ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ʏᴏᴜʀ ʟᴏᴠᴇ! ✨</b></blockquote>
 """
     await CallbackQuery.edit_message_media(
         media=InputMediaPhoto(
-            media="https://i.ibb.co/Hfhp24mq/image.jpg",
+            media="https://files.catbox.moe/c0akch.jpg",
             caption=donate_text
         ),
         reply_markup=InlineKeyboardMarkup(
@@ -224,17 +220,17 @@ async def del_back_playlist(client, CallbackQuery, _):
         if not await is_music_playing(chat_id): return await CallbackQuery.answer(_["admin_1"], show_alert=True)
         await CallbackQuery.answer()
         await music_off(chat_id)
-        await Lucky.pause_stream(chat_id)
+        await Madara.pause_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_2"].format(mention), reply_markup=close_markup(_))
     elif command == "Resume":
         if await is_music_playing(chat_id): return await CallbackQuery.answer(_["admin_3"], show_alert=True)
         await CallbackQuery.answer()
         await music_on(chat_id)
-        await Lucky.resume_stream(chat_id)
+        await Madara.resume_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_4"].format(mention), reply_markup=close_markup(_))
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
-        await Lucky.stop_stream(chat_id)
+        await Madara.stop_stream(chat_id)
         await set_loop(chat_id, 0)
         await CallbackQuery.message.reply_text(_["admin_5"].format(mention), reply_markup=close_markup(_))
         await CallbackQuery.message.delete()
@@ -248,9 +244,9 @@ async def del_back_playlist(client, CallbackQuery, _):
                 if not check:
                     await CallbackQuery.edit_message_text(txt)
                     await CallbackQuery.message.reply_text(_["admin_6"].format(mention, CallbackQuery.message.chat.title), reply_markup=close_markup(_))
-                    return await Lucky.stop_stream(chat_id)
+                    return await Madara.stop_stream(chat_id)
             except:
-                return await Lucky.stop_stream(chat_id)
+                return await Madara.stop_stream(chat_id)
         else:
             txt = f"➻ sᴛʀᴇᴀᴍ ʀᴇ-ᴘʟᴀʏᴇᴅ 🎄\n│ \n└ʙʏ : {mention} 🥀"
         
@@ -273,11 +269,11 @@ async def del_back_playlist(client, CallbackQuery, _):
             if "live_" in queued:
                 n, link = await YouTube.video(videoid, True)
                 if n == 0: return await CallbackQuery.message.reply_text(_["admin_7"].format(title))
-                await Lucky.skip_stream(chat_id, link, video=status, image=image)
+                await Madara.skip_stream(chat_id, link, video=status, image=image)
             elif "vid_" in queued:
-                 await Lucky.skip_stream(chat_id, queued, video=status, image=image)
+                 await Madara.skip_stream(chat_id, queued, video=status, image=image)
             else:
-                 await Lucky.skip_stream(chat_id, queued, video=status, image=image)
+                 await Madara.skip_stream(chat_id, queued, video=status, image=image)
         except:
             return await CallbackQuery.message.reply_text(_["call_6"])
 

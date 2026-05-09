@@ -2,7 +2,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 from MadaraMusic import app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.utils.inline import close_markup
 from config import BANNED_USERS
 # Hum Database functions import kar rahe hain taaki state save rahe
@@ -24,7 +24,7 @@ async def resume_com(cli, message: Message, _, chat_id):
     await music_on(chat_id)
     
     # Stream ko Resume karega
-    await Lucky.resume_stream(chat_id)
+    await Madara.resume_stream(chat_id)
     
     buttons_resume = [
         [

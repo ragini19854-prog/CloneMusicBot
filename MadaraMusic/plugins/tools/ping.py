@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from config import *
 from MadaraMusic import app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.utils import bot_sys_stats
 from MadaraMusic.utils.decorators.language import language
 from MadaraMusic.utils.inline import supp_markup
@@ -20,7 +20,7 @@ async def ping_com(client, message: Message, _):
         photo=PING_IMG_URL,
         caption=_["ping_1"].format(app.mention),
     )
-    pytgping = await Lucky.ping()
+    pytgping = await Madara.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
     resp = (datetime.now() - start).microseconds / 1000
     await response.edit_text(

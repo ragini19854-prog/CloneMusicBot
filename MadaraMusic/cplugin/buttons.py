@@ -68,8 +68,8 @@ def stream_markup(_, chat_id):
 def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
     buttons = [
         [
-            InlineKeyboardButton(text=_["P_B_1"], callback_data=f"LuckyPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}"),
-            InlineKeyboardButton(text=_["P_B_2"], callback_data=f"LuckyPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}"),
+            InlineKeyboardButton(text=_["P_B_1"], callback_data=f"MadaraPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}"),
+            InlineKeyboardButton(text=_["P_B_2"], callback_data=f"MadaraPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}"),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"forceclose {videoid}|{user_id}")],
     ]

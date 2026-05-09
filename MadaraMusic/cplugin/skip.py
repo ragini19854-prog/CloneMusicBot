@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
 from MadaraMusic import YouTube, app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.misc import db
 from MadaraMusic.utils.database import get_loop
 # ✅ FIX: Import AdminRightsCheck from Cplugin folder
@@ -61,7 +61,7 @@ async def skip(cli, message: Message, _, chat_id):
                                         ),
                                         reply_markup=close_markup(_),
                                     )
-                                    await Lucky.stop_stream(chat_id)
+                                    await Madara.stop_stream(chat_id)
                                 except:
                                     pass
                                 return
@@ -88,7 +88,7 @@ async def skip(cli, message: Message, _, chat_id):
                     reply_markup=close_markup(_),
                 )
                 try:
-                    return await Lucky.stop_stream(chat_id)
+                    return await Madara.stop_stream(chat_id)
                 except:
                     return
         except:
@@ -99,7 +99,7 @@ async def skip(cli, message: Message, _, chat_id):
                     ),
                     reply_markup=close_markup(_),
                 )
-                return await Lucky.stop_stream(chat_id)
+                return await Madara.stop_stream(chat_id)
             except:
                 return
     
@@ -129,7 +129,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await Lucky.skip_stream(chat_id, link, video=status, image=image)
+            await Madara.skip_stream(chat_id, link, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup2(_, chat_id)
@@ -162,7 +162,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await Lucky.skip_stream(chat_id, file_path, video=status, image=image)
+            await Madara.skip_stream(chat_id, file_path, video=status, image=image)
         except:
             return await mystic.edit_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -182,7 +182,7 @@ async def skip(cli, message: Message, _, chat_id):
         await mystic.delete()
     elif "index_" in queued:
         try:
-            await Lucky.skip_stream(chat_id, videoid, video=status)
+            await Madara.skip_stream(chat_id, videoid, video=status)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup2(_, chat_id)
@@ -211,7 +211,7 @@ async def skip(cli, message: Message, _, chat_id):
             except:
                 image = None
         try:
-            await Lucky.skip_stream(chat_id, queued, video=status, image=image)
+            await Madara.skip_stream(chat_id, queued, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
             

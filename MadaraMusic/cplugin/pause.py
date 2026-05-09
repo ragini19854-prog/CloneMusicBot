@@ -2,7 +2,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from MadaraMusic import app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.utils.database import music_off
 from config import BANNED_USERS
 
@@ -17,7 +17,7 @@ async def pause_admin(cli, message: Message, _, chat_id):
     await music_off(chat_id)
     
     # Asli stream ko pause karo
-    await Lucky.pause_stream(chat_id)
+    await Madara.pause_stream(chat_id)
 
     buttons = [
         [

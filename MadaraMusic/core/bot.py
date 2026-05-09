@@ -5,8 +5,18 @@ import config
 
 from ..logging import LOGGER
 
+FOOTER = "\n\n<b>•──────────────────────•\n🌺 ᴘᴏᴡєʀєᴅ ʙʏ » |𝐌 ᴀ ᴅ ᴀ ʀ ᴀ •| <a href='http://t.me/YOUR_MADARA_BRO'>⚡</a>\n•──────────────────────•</b>"
 
-class Lucky(Client):
+
+def _append_footer(text: str) -> str:
+    if not text:
+        return text
+    if "YOUR_MADARA_BRO" in text:
+        return text
+    return text + FOOTER
+
+
+class Madara(Client):
     def __init__(self):
         LOGGER(__name__).info(f"Starting Bot...")
         super().__init__(
@@ -26,7 +36,7 @@ class Lucky(Client):
         self.mention = self.me.mention
 
         try:
-            await self.send_message(
+            await super().send_message(
                 chat_id=config.LOGGER_ID,
                 text=f"<u><b>» {self.mention} ʙᴏᴛ sᴛᴀʀᴛᴇᴅ :</b><u>\n\nɪᴅ : <code>{self.id}</code>\nɴᴀᴍᴇ : {self.name}\nᴜsᴇʀɴᴀᴍᴇ : @{self.username}",
             )
@@ -51,3 +61,41 @@ class Lucky(Client):
 
     async def stop(self):
         await super().stop()
+
+    async def send_message(self, *args, **kwargs):
+        if "text" in kwargs and kwargs["text"]:
+            kwargs["text"] = _append_footer(kwargs["text"])
+        elif len(args) >= 2 and isinstance(args[1], str):
+            args = list(args)
+            args[1] = _append_footer(args[1])
+            args = tuple(args)
+        return await super().send_message(*args, **kwargs)
+
+    async def send_photo(self, *args, **kwargs):
+        if "caption" in kwargs and kwargs["caption"]:
+            kwargs["caption"] = _append_footer(kwargs["caption"])
+        return await super().send_photo(*args, **kwargs)
+
+    async def edit_message_text(self, *args, **kwargs):
+        if "text" in kwargs and kwargs["text"]:
+            kwargs["text"] = _append_footer(kwargs["text"])
+        elif len(args) >= 3 and isinstance(args[2], str):
+            args = list(args)
+            args[2] = _append_footer(args[2])
+            args = tuple(args)
+        return await super().edit_message_text(*args, **kwargs)
+
+    async def send_video(self, *args, **kwargs):
+        if "caption" in kwargs and kwargs["caption"]:
+            kwargs["caption"] = _append_footer(kwargs["caption"])
+        return await super().send_video(*args, **kwargs)
+
+    async def send_audio(self, *args, **kwargs):
+        if "caption" in kwargs and kwargs["caption"]:
+            kwargs["caption"] = _append_footer(kwargs["caption"])
+        return await super().send_audio(*args, **kwargs)
+
+    async def send_document(self, *args, **kwargs):
+        if "caption" in kwargs and kwargs["caption"]:
+            kwargs["caption"] = _append_footer(kwargs["caption"])
+        return await super().send_document(*args, **kwargs)

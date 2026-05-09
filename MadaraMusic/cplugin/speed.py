@@ -2,7 +2,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 
 from MadaraMusic import app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.misc import SUDOERS, db
 # ✅ FIX: Imported from decorators for consistency
 from MadaraMusic.utils.decorators import AdminRightsCheck
@@ -86,7 +86,7 @@ async def speed_play_callback(client, callback_query, _):
         text=_["admin_32"].format(callback_query.from_user.mention),
     )
     try:
-        await Lucky.speedup_stream(
+        await Madara.speedup_stream(
             chat_id,
             file_path,
             speed,

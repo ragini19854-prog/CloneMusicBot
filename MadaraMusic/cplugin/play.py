@@ -8,7 +8,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 from MadaraMusic.utils.database import get_assistant
 import config
 from MadaraMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.misc import SUDOERS, db
 
 # ✅ IMPORT: Ab 'buttons.py' se import ho raha hai
@@ -51,7 +51,7 @@ from MadaraMusic.utils.database.clonedb import (
 )
 
 from MadaraMusic.utils.exceptions import AssistantErr
-from MadaraMusic.utils.pastebin import LuckyBin
+from MadaraMusic.utils.pastebin import MadaraBin
 from MadaraMusic.utils.stream.queue import put_queue, put_queue_index
 from MadaraMusic.utils.logger import play_logs, clone_bot_logs
 from MadaraMusic.cplugin.setinfo import get_logging_status, get_log_channel
@@ -333,7 +333,7 @@ async def play_commnd(client, message: Message, _, chat_id, video, channel, play
             return await mystic.delete()
         else:
             try:
-                await Lucky.stream_call(url)
+                await Madara.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(_["black_9"])
                 return await app.send_message(chat_id=config.CLONE_LOGGER, text=_["play_17"])
@@ -517,14 +517,14 @@ async def play_music(client: Client, CallbackQuery, _):
         return await mystic.edit_text(e)
     return await mystic.delete()
 
-@Client.on_callback_query(filters.regex("ZEOmousAdmin") & ~BANNED_USERS)
+@Client.on_callback_query(filters.regex("MadaramousAdmin") & ~BANNED_USERS)
 async def ZEOmous_check(client: Client, CallbackQuery):
     try:
         await CallbackQuery.answer("Revert back to user account:\n\nOpen group settings.\n-> Administrators\n-> Click on your name\n-> Uncheck anonymous admin permissions.", show_alert=True)
     except:
         pass
 
-@Client.on_callback_query(filters.regex("ZEOPlaylists") & ~BANNED_USERS)
+@Client.on_callback_query(filters.regex("MadaraPlaylists") & ~BANNED_USERS)
 @languageCB
 async def play_playlists_command(client: Client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
@@ -668,7 +668,7 @@ async def stream(client, _, mystic, user_id, result, chat_id, user_name, origina
     if not result:
         return
     if forceplay:
-        await Lucky.force_stop_stream(chat_id)
+        await Madara.force_stop_stream(chat_id)
     
     bot_id = client.me.id
     bot_username = client.me.username # ✅ Added for Clone Buttons
@@ -703,7 +703,7 @@ async def stream(client, _, mystic, user_id, result, chat_id, user_name, origina
                     file_path, direct = await YouTube.download(vidid, mystic, video=status, videoid=True)
                 except:
                     continue
-                await Lucky.join_call(chat_id, original_chat_id, file_path, video=status, image=thumbnail, userbot=userbot)
+                await Madara.join_call(chat_id, original_chat_id, file_path, video=status, image=thumbnail, userbot=userbot)
                 await put_queue(chat_id, original_chat_id, file_path if direct else f"vid_{vidid}", title, duration_min, user_name, vidid, user_id, "video" if video else "audio", forceplay=forceplay)
                 db[chat_id][-1]["client"] = client
                 img = await get_thumb(vidid, user_id, client)
@@ -726,7 +726,7 @@ async def stream(client, _, mystic, user_id, result, chat_id, user_name, origina
         if count == 0:
             return
         else:
-            link = await LuckyBin(msg)
+            link = await MadaraBin(msg)
             upl = close_markup(_)
             return await client.send_message(original_chat_id, text=_["play_21"].format(position, link), reply_markup=upl)
 
@@ -751,7 +751,7 @@ async def stream(client, _, mystic, user_id, result, chat_id, user_name, origina
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Lucky.join_call(chat_id, original_chat_id, file_path, video=status, image=thumbnail, userbot=userbot)
+            await Madara.join_call(chat_id, original_chat_id, file_path, video=status, image=thumbnail, userbot=userbot)
             await put_queue(chat_id, original_chat_id, file_path if direct else f"vid_{vidid}", title, duration_min, user_name, vidid, user_id, "video" if video else "audio", forceplay=forceplay)
             db[chat_id][-1]["client"] = client
             img = await get_thumb(vidid, user_id, client)
@@ -785,7 +785,7 @@ async def stream(client, _, mystic, user_id, result, chat_id, user_name, origina
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Lucky.join_call(chat_id, original_chat_id, file_path, video=None, userbot=userbot)
+            await Madara.join_call(chat_id, original_chat_id, file_path, video=None, userbot=userbot)
             await put_queue(chat_id, original_chat_id, file_path, title, duration_min, user_name, streamtype, user_id, "audio", forceplay=forceplay)
             db[chat_id][-1]["client"] = client
             
@@ -813,7 +813,7 @@ async def stream(client, _, mystic, user_id, result, chat_id, user_name, origina
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Lucky.join_call(chat_id, original_chat_id, file_path, video=status, userbot=userbot)
+            await Madara.join_call(chat_id, original_chat_id, file_path, video=status, userbot=userbot)
             await put_queue(chat_id, original_chat_id, file_path, title, duration_min, user_name, streamtype, user_id, "video" if video else "audio", forceplay=forceplay)
             db[chat_id][-1]["client"] = client
             if video: await add_active_video_chat(chat_id)
@@ -845,7 +845,7 @@ async def stream(client, _, mystic, user_id, result, chat_id, user_name, origina
                 db[chat_id] = []
             n, file_path = await YouTube.video(link)
             if n == 0: raise AssistantErr(_["str_3"])
-            await Lucky.join_call(chat_id, original_chat_id, file_path, video=status, image=thumbnail if thumbnail else None, userbot=userbot)
+            await Madara.join_call(chat_id, original_chat_id, file_path, video=status, image=thumbnail if thumbnail else None, userbot=userbot)
             await put_queue(chat_id, original_chat_id, f"live_{vidid}", title, duration_min, user_name, vidid, user_id, "video" if video else "audio", forceplay=forceplay)
             db[chat_id][-1]["client"] = client
             img = await get_thumb(vidid, user_id, client)
@@ -871,7 +871,7 @@ async def stream(client, _, mystic, user_id, result, chat_id, user_name, origina
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Lucky.join_call(chat_id, original_chat_id, link, video=True if video else None, userbot=userbot)
+            await Madara.join_call(chat_id, original_chat_id, link, video=True if video else None, userbot=userbot)
             await put_queue_index(chat_id, original_chat_id, "index_url", title, duration_min, user_name, link, "video" if video else "audio", forceplay=forceplay)
             db[chat_id][-1]["client"] = client
             

@@ -87,7 +87,7 @@ async def _clear_(chat_id):
 class Call(PyTgCalls):
     def __init__(self):
         self.userbot1 = Client(
-            name="LuckyAss1",
+            name="MadaraAss1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING1),
@@ -96,6 +96,10 @@ class Call(PyTgCalls):
             self.userbot1,
             cache_duration=100,
         )
+        self.two = self.one
+        self.three = self.one
+        self.four = self.one
+        self.five = self.one
         
         self.custom_assistants = {} 
         self.active_clients = {} 
@@ -667,4 +671,4 @@ class Call(PyTgCalls):
                 await self.change_stream(client, update.chat_id)
 
 
-Lucky = Call()
+Madara = Call()

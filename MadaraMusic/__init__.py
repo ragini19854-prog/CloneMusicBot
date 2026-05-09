@@ -1,4 +1,4 @@
-from MadaraMusic.core.bot import Lucky
+from MadaraMusic.core.bot import Madara
 from MadaraMusic.core.dir import dirr
 from MadaraMusic.core.git import git
 from MadaraMusic.core.userbot import Userbot
@@ -12,7 +12,7 @@ git()
 dbb()
 heroku()
 
-app = Lucky()
+app = Madara()
 api = SafoneAPI()
 userbot = Userbot()
 

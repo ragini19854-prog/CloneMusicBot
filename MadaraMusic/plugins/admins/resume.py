@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from MadaraMusic import app
-from MadaraMusic.core.call import Lucky
+from MadaraMusic.core.call import Madara
 from MadaraMusic.utils.database import is_music_playing, music_on
 from MadaraMusic.utils.decorators import AdminRightsCheck
 from MadaraMusic.utils.inline import close_markup
@@ -15,7 +15,7 @@ async def resume_com(cli, message: Message, _, chat_id):
     if await is_music_playing(chat_id):
         return await message.reply_text(_["admin_3"])
     await music_on(chat_id)
-    await Lucky.resume_stream(chat_id)
+    await Madara.resume_stream(chat_id)
     await message.reply_text(
         _["admin_4"].format(message.from_user.mention), reply_markup=close_markup(_)
     )
