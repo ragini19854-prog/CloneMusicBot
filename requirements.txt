@@ -1,5 +1,6 @@
 asyncio
 pyrofork
+kurigram
 tgcrypto
 gTTS
 aiofiles
