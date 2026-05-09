@@ -51,7 +51,6 @@ py-tgcalls
 py-yt-search
 pykeyboard
 pyrofork
-pyrogram
 python-dotenv
 pytz
 pyyaml
