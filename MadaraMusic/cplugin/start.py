@@ -388,7 +388,7 @@ async def start_pm(client, message: Message, _):
             pass
     
     photo = start_img if start_img else get_random_start_image()
-    await message.reply_photo(photo, caption=caption, reply_markup=markup, message_effect_id=effect, has_spoiler=True, parse_mode=ParseMode.HTML)
+    await message.reply_photo(photo, caption=caption, reply_markup=markup, has_spoiler=True, parse_mode=ParseMode.HTML)
 
 # =====================================================================
 # START COMMAND (GROUP)
