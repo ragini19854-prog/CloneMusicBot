@@ -216,11 +216,22 @@ async def start_pm(client, message: Message, _):
         except:
              pass
     else:
-        anim_frames = ["<b>ʟᴏᴀᴅɪɴɢ</b>", "<b>ʟᴏᴀᴅɪɴɢ.</b>", "<b>ʟᴏᴀᴅɪɴɢ..</b>", "<b>ʟᴏᴀᴅɪɴɢ...</b>"]
+        anim_frames = [
+            "<b>ʜʟᴏ</b>",
+            "<b>ʜʟᴏ ʙᴀʙʏ</b>",
+            "<b>ʟᴏᴀᴅɪɴɢ</b>",
+            "<b>ʟᴏᴀᴅɪɴɢ.</b>",
+            "<b>ʟᴏᴀᴅɪɴɢ..</b>",
+            "<b>ʟᴏᴀᴅɪɴɢ...</b>",
+            "<b>˹ 𝐒ʜʀɪsᴛɪ</b>",
+            "<b>˹ 𝐒ʜʀɪsᴛɪ ꭙ</b>",
+            "<b>˹ 𝐒ʜʀɪsᴛɪ ꭙ 𝐌ᴜsɪᴄ ♪ ˼</b>",
+        ]
+        delays = [0.4, 0.4, 0.3, 0.3, 0.3, 0.3, 0.4, 0.4, 0.8]
         try:
             loading = await message.reply_text(anim_frames[0])
-            for frame in anim_frames[1:]:
-                await asyncio.sleep(0.3)
+            for frame, delay in zip(anim_frames[1:], delays[1:]):
+                await asyncio.sleep(delay)
                 try:
                     await loading.edit_text(frame, parse_mode=ParseMode.HTML)
                 except:
@@ -350,11 +361,11 @@ async def start_pm(client, message: Message, _):
             caption = custom_caption
     else:
         formatted_text = (
-            f"Hey {user_mention} 👋\n\n"
-            f"⦿ THIS IS {bot_mention} !\n\n"
-            f"➻ A FAST & POWERFUL TELEGRAM MUSIC PLAYER BOT.\n\n"
-            f"──────────────────\n"
-            f"✦ POWERED BY » {bot_mention}"
+            f"•────「 ɪɴғᴏʀᴍᴀᴛɪᴏɴ 」────•\n\n"
+            f"ʜᴇʏ, · ❰ {user_mention} ❱ 🐉\n"
+            f"ɪ ᴀᴍ · ❝ {bot_mention} ♪ ❞, [ɴᴏ ᴀᴅs] ✨\n\n"
+            f"ɪ ᴀᴍ ᴛʜᴇ ғᴀsᴛᴇsᴛ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ\n"
+            f"ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ғᴇᴀᴛᴜʀᴇs."
         )
         caption = f"<blockquote expandable>{formatted_text}</blockquote>"
 
@@ -493,7 +504,13 @@ async def home_back_handler(client, CallbackQuery, _):
         except:
             caption = custom_caption
     else:
-        formatted_text = (f"Hey {user_mention} 👋\n\n⦿ THIS IS {bot_mention} !\n\n➻ A FAST & POWERFUL TELEGRAM MUSIC PLAYER BOT.\n\n──────────────────\n✦ POWERED BY » {bot_mention}")
+        formatted_text = (
+            f"•────「 ɪɴғᴏʀᴍᴀᴛɪᴏɴ 」────•\n\n"
+            f"ʜᴇʏ, · ❰ {user_mention} ❱ 🐉\n"
+            f"ɪ ᴀᴍ · ❝ {bot_mention} ♪ ❞, [ɴᴏ ᴀᴅs] ✨\n\n"
+            f"ɪ ᴀᴍ ᴛʜᴇ ғᴀsᴛᴇsᴛ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ\n"
+            f"ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ғᴇᴀᴛᴜʀᴇs."
+        )
         caption = f"<blockquote expandable>{formatted_text}</blockquote>"
 
     # ✅ Random Effect Logic (Callback)
