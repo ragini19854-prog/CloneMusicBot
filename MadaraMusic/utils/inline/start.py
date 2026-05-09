@@ -27,7 +27,7 @@ def private_panel(_):
         ],
         [
             InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID, style=enums.ButtonStyle.PRIMARY),
-            InlineKeyboardButton(text="ᴄʟᴏɴᴇ", callback_data="clone_page", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="ᴄʟᴏɴᴇ", callback_data="clone_page", style=enums.ButtonStyle.DANGER),
         ],
         [
             InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="support_page", style=enums.ButtonStyle.PRIMARY),
