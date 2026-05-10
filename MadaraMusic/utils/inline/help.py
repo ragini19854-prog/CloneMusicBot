@@ -63,7 +63,7 @@ def first_page(_, is_owner: bool = False):
 
     if is_owner:
         first.append([
-            InlineKeyboardButton(text="🛠 ᴄʟᴏɴᴇ ғᴇᴀᴛᴜʀᴇ", callback_data="help_callback chelp", style=enums.ButtonStyle.SUCCESS),
+            InlineKeyboardButton(text="🛠 cℓσηє ƒєαтυяє", callback_data="help_callback chelp", style=enums.ButtonStyle.SUCCESS),
         ])
 
     first.append([
@@ -76,18 +76,18 @@ def first_page(_, is_owner: bool = False):
 def clone_help_panel(_):
     buttons = [
         [
-            InlineKeyboardButton(text="ᴍᴀɴᴀɢᴇ", callback_data="help_callback clone_manage", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="мαηαgє", callback_data="help_callback clone_manage", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="sᴛᴀʀᴛ", callback_data="help_callback clone_start", style=enums.ButtonStyle.SUCCESS),
-            InlineKeyboardButton(text="ᴘɪɴɢ", callback_data="help_callback clone_ping", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="ѕтαят", callback_data="help_callback clone_start", style=enums.ButtonStyle.SUCCESS),
+            InlineKeyboardButton(text="ριηg", callback_data="help_callback clone_ping", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="ᴘʟᴀʏ ᴍᴏᴅᴇ", callback_data="help_callback clone_play", style=enums.ButtonStyle.PRIMARY),
-            InlineKeyboardButton(text="ʟᴏɢɢᴇʀ", callback_data="help_callback clone_logger", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="ρℓαу мσ∂є", callback_data="help_callback clone_play", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="ℓσggєя", callback_data="help_callback clone_logger", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="ʙᴜᴛᴛᴏɴs & ʀᴇɴᴀᴍᴇ", callback_data="help_callback clone_buttons", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="вυттσηѕ & яєηαмє", callback_data="help_callback clone_buttons", style=enums.ButtonStyle.PRIMARY),
         ],
         [
             InlineKeyboardButton(text=_["BACK_BUTTON"], callback_data="settings_back_helper", style=enums.ButtonStyle.PRIMARY),
