@@ -181,7 +181,7 @@ def telegram_markup(_, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="Next",
+                text="Nєχт",
                 callback_data=f"PanelMarkup None|{chat_id}",
                 style=enums.ButtonStyle.PRIMARY,
             ),
@@ -201,16 +201,16 @@ def queue_markup(_, videoid, chat_id):
             ),
         ],
         [
-            InlineKeyboardButton(text="II ᴘᴀᴜsᴇ", callback_data=f"ADMIN Pause|{chat_id}", style=enums.ButtonStyle.PRIMARY),
-            InlineKeyboardButton(text="▢ sᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}", style=enums.ButtonStyle.DANGER),
-            InlineKeyboardButton(text="sᴋɪᴘ ‣‣I", callback_data=f"ADMIN Skip|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="II ραυѕє", callback_data=f"ADMIN Pause|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="▢ ѕтσρ", callback_data=f"ADMIN Stop|{chat_id}", style=enums.ButtonStyle.DANGER),
+            InlineKeyboardButton(text="ѕкιρ ‣‣I", callback_data=f"ADMIN Skip|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="▷ ʀᴇsᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}", style=enums.ButtonStyle.SUCCESS),
-            InlineKeyboardButton(text="ʀᴇᴘʟᴀʏ ↺", callback_data=f"ADMIN Replay|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="▷ яєѕυмє", callback_data=f"ADMIN Resume|{chat_id}", style=enums.ButtonStyle.SUCCESS),
+            InlineKeyboardButton(text="яєρℓαу ↺", callback_data=f"ADMIN Replay|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="ᴍᴏʀᴇ", callback_data=f"PanelMarkup None|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="мσяє", callback_data=f"PanelMarkup None|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
     ]
     return buttons
@@ -290,16 +290,16 @@ def panel_markup_1(_, videoid, chat_id):
             ),
         ],
         [
-            InlineKeyboardButton(text="sʜᴜғғʟᴇ", callback_data=f"ADMIN Shuffle|{chat_id}", style=enums.ButtonStyle.PRIMARY),
-            InlineKeyboardButton(text="ʟᴏᴏᴘ ↺", callback_data=f"ADMIN Loop|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="ѕнυƒƒℓє", callback_data=f"ADMIN Shuffle|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="ℓσσρ ↺", callback_data=f"ADMIN Loop|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="◁ 10 sᴇᴄ", callback_data=f"ADMIN 1|{chat_id}", style=enums.ButtonStyle.PRIMARY),
-            InlineKeyboardButton(text="10 sᴇᴄ ▷", callback_data=f"ADMIN 2|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="◁ 10 ѕєc", callback_data=f"ADMIN 1|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="10 ѕєc ▷", callback_data=f"ADMIN 2|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="ʜᴏᴍᴇ", callback_data=f"Pages Back|2|{videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
-            InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"Pages Forw|2|{videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="нσмє", callback_data=f"Pages Back|2|{videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="ηєχт", callback_data=f"Pages Forw|2|{videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
     ]
     return buttons
@@ -324,7 +324,7 @@ def panel_markup_2(_, videoid, chat_id):
             InlineKeyboardButton(text="🕛 2.0x", callback_data=f"SpeedUP {chat_id}|2.0", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data=f"Pages Back|1|{videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="вαcк", callback_data=f"Pages Back|1|{videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
     ]
     return buttons
@@ -340,7 +340,7 @@ def panel_markup_5(_, videoid, chat_id):
             ),
         ],
         [
-            InlineKeyboardButton(text="ᴘᴀᴜsᴇ", callback_data=f"ADMIN Pause|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="ραυѕє", callback_data=f"ADMIN Pause|{chat_id}", style=enums.ButtonStyle.PRIMARY),
             InlineKeyboardButton(text="sᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}", style=enums.ButtonStyle.DANGER),
             InlineKeyboardButton(text="sᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
@@ -349,8 +349,8 @@ def panel_markup_5(_, videoid, chat_id):
             InlineKeyboardButton(text="ʀᴇᴘʟᴀʏ", callback_data=f"ADMIN Replay|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="ʜᴏᴍᴇ", callback_data=f"MainMarkup {videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
-            InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"Pages Forw|1|{videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="нσмє", callback_data=f"MainMarkup {videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="ηєχт", callback_data=f"Pages Forw|1|{videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
     ]
     return buttons
@@ -368,7 +368,7 @@ def panel_markup_3(_, videoid, chat_id):
             InlineKeyboardButton(text="🕛 2.0x", callback_data=f"SpeedUP {chat_id}|2.0", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data=f"Pages Back|2|{videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="вαcк", callback_data=f"Pages Back|2|{videoid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
     ]
     return buttons
@@ -402,16 +402,16 @@ def panel_markup_4(_, vidid, chat_id, played, dur):
             InlineKeyboardButton(text=f"{played} {bar} {dur}", callback_data="GetTimer")
         ],
         [
-            InlineKeyboardButton(text="II ᴘᴀᴜsᴇ", callback_data=f"ADMIN Pause|{chat_id}", style=enums.ButtonStyle.PRIMARY),
-            InlineKeyboardButton(text="▢ sᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}", style=enums.ButtonStyle.DANGER),
-            InlineKeyboardButton(text="sᴋɪᴘ ‣‣I", callback_data=f"ADMIN Skip|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="II ραυѕє", callback_data=f"ADMIN Pause|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="▢ ѕтσρ", callback_data=f"ADMIN Stop|{chat_id}", style=enums.ButtonStyle.DANGER),
+            InlineKeyboardButton(text="ѕкιρ ‣‣I", callback_data=f"ADMIN Skip|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="▷ ʀᴇsᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}", style=enums.ButtonStyle.SUCCESS),
-            InlineKeyboardButton(text="ʀᴇᴘʟᴀʏ ↺", callback_data=f"ADMIN Replay|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="▷ яєѕυмє", callback_data=f"ADMIN Resume|{chat_id}", style=enums.ButtonStyle.SUCCESS),
+            InlineKeyboardButton(text="яєρℓαу ↺", callback_data=f"ADMIN Replay|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="ʜᴏᴍᴇ", callback_data=f"MainMarkup {vidid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
+            InlineKeyboardButton(text="нσмє", callback_data=f"MainMarkup {vidid}|{chat_id}", style=enums.ButtonStyle.PRIMARY),
         ],
     ]
     return buttons
